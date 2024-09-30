@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Enquiries</h1>
+        <nav>
+                <a href="index.html">Home</a>|
+                <a href="products.html">Products</a>|
+                <a href="enquire.html">Enquire</a>|
+                <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="max-width: 700px;padding: 8px 12px;margin:0 auto">Get in Touch</h2>
+        <p style="max-width: 700px;padding: 8px 12px;margin:0 auto">Have questions about our peanut products? Fill out the form below to send us an inquiry.</p>
+
+        <form id="enquiry-form" action="submit_enquiry.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+        
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+        
+            <label for="inquiry-type">Inquiry Type:</label><br>
+            <select id="inquiry-type" name="inquiry_type" required>
+                <option value="">--Select an option--</option>
+                <option value="product_info">Product Information</option>
+                <option value="order_status">Order Status</option>
+                <option value="wholesale">Wholesale Inquiry</option>
+                <option value="feedback">Feedback</option>
+            </select><br><br>
+
+            <label>Preferred Contact Method:</label><br>
+            <input type="radio" id="contact_email" name="contact_method" value="email" checked>
+            <label for="contact_email">Email</label><br>
+            <input type="radio" id="contact_phone" name="contact_method" value="phone">
+            <label for="contact_phone">Phone</label><br><br>
+            <label for="phone">Phone Number (optional):</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+
+            <label for="contact_date">Preferred Contact Date:</label><br>
+            <input type="date" id="contact_date" name="contact_date" required><br><br>
+
+            
+            <label for="contact_time">Preferred Contact Time:</label><br>
+            <input type="time" id="contact_time" name="contact_time" required><br><br>
+
+            <label for="favorite_color">Favorite Color:</label><br>
+            <input type="color" id="favorite_color" name="favorite_color" value="#ff0000"><br><br>
+
+            <label for="rating">Rate our Products (1 to 5):</label><br>
+            <input type="range" id="rating" name="rating" min="1" max="5" value="3" oninput="this.nextElementSibling.value = this.value">
+            <output>3</output><br><br>
+            <label>Subscribe to our newsletter?</label><br>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">Yes, keep me updated on new products and promotions</label><br><br>
+
+            <label for="file-upload">Upload any relevant documents:</label><br>
+            <input type="file" id="file-upload" name="file_upload"><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message" required></textarea><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear Form">
+        </form>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <p>Q: How can I place an order?</p>
+            <p>A: You can place an order by visiting our Products page and adding items to your cart.</p>
+            <p>Q: Do you offer wholesale pricing?</p>
+            <p>A: Yes, we offer wholesale pricing for bulk orders. Please contact us for more information.</p>
+        </section>
+    </main>
+
+   
+
+    <script>
+        function validateForm() {
+            
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const inquiryType = document.getElementById("inquiry-type").value;
+            const message = document.getElementById("message").value.trim();
+
+            
+            if (name === "" || email === "" || inquiryType === "" || message === "") {
+                alert("Please fill out all required fields.");
+                return false; 
+            }
+
+            
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false; 
+            }
+
+            
+            return true;
+        }
+    </script>
+
+    
+</body>
+    
+</body>
+</html>

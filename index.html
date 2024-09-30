@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Adm Number: CIT-227-014/2022
+        Name:DAVID DUNCAN MAUNDU
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 align="center"><b> NuttyDelight</b><br>
+        
+    <nav>
+
+            <a href="product.html">Product</a>|
+            <a href="enquire.html">Enquire</a>|
+            <a href="about.html">Contact</a>|
+            <a href="index.html">Home</a>|
+    
+    </nav>
+    </h1>
+    <div>
+        <p id="welcome-text"><marqu></marquee>NuttyDelight is your ultimate destination for all things peanuts!</p>
+        <button id="change-text-btn">Change Welcome Message</button>
+    </div>
+    <img src="home.jpg">
+    <div>
+    <p style="max-width: 700px;padding: 8px 12px;margin:0 auto;">NuttyDelight is your ultimate destination for all things peanuts! Discover the irresistible crunch and creamy goodness of peanuts as we showcase a curated selection of premium peanut products and recipes. From classic roasted peanuts to indulgent peanut butter treats, we've got you covered. Explore our collection and unlock the nutritional power of peanuts, packed with protein, healthy fats, and essential nutrients. Join our community of peanut enthusiasts and embark on a journey to better health and delicious flavors. Whether you're a seasoned peanut lover or new to the nutty craze, there's something for everyone here. Start your peanut adventure today and experience the joy of snacking with NuttyDelight.</p>
+    </div>
+    <footer>
+        
+        <p>&copy; 2024 myWebsite. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const changeTextButton = document.getElementById("change-text-btn");
+            const welcomeText = document.getElementById("welcome-text");
+            changeTextButton.addEventListener("click", function() {
+                welcomeText.textContent = "Welcome to the world of peanuts, enjoy our amazing range of products!";
+            });
+
+            console.log("NuttyDelight homepage loaded successfully!");
+        });
+    </script>
+    
+</body>
+
+</html>
